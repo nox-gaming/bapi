@@ -25,8 +25,6 @@ npm run dev
 ### Character
 Get character informations
 
-`POST` sur `/character`
-
 Method | uri | parameters | description
 ------ | ------ | ------- | ----
 POST | `/character` |  `string:`realm, `string:`name | Get character informations
