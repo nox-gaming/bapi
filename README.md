@@ -22,4 +22,4 @@ Get character informations
 
 Method | uri | parameters | description
 ------ | ------ | ------- | ----
-POST | `/charater` |  `string:`realm, `string:`name | Get character informations
+POST | `/character` |  `string:`realm, `string:`name | Get character informations
