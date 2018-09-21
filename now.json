@@ -1,5 +1,6 @@
 {
     "name": "bapi",
+    "public": true,
     "env": {
         "TOKEN": "@bapi-b-token",
         "PORT": "@bapi-port"
