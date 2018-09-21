@@ -1,5 +1,7 @@
 # BAPI
 
+<img src="./bapi.jpg" alt="drawing" width="200"/>
+
 ## How to launch it
 Create a `.env` file at root folder like :
 
