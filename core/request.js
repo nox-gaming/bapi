@@ -1,21 +1,8 @@
 const axios = require('axios')
 const apiRoutes = require('./api')
 const config = require('../config.json')
-const apiKey = process.env.TOKEN || 'km2ftg96z3pnsgtjqsh4pcrngs563uby'
 
-const suffix = `locale=en_EN&apikey=${apiKey}`
-
-// https://eu.api.battle.net/wow/item/18803?locale=en_EN&apikey=u5hagn2yuvv5graytc24rbek2sg7ndnf
-
-function urlBuilder(endpoint, fields) {
-    let url = `${config.base_url}${endpoint}`
-    fields.map(field => {
-        url += `&${field}`
-    })
-    url+= suffix
-    console.log('url', url)
-    return url;
-}
+const suffix = `locale=${config.locale}&apikey=${process.env.TOKEN}`
 
 /**
  * Request centralisation

@@ -48,11 +48,17 @@ app.get('/', (req, res) => {
 
 app.post('/character', async (req, res) => {
     const { name, realm } = req.body;
-    const characterDetails = await getCharacterDetails(realm, name)
-    if (characterDetails.code !== 200) errorHandler(characterDetails.data)
+    const response = await getCharacterDetails(realm, name)
+    if (response.status !== 200) {
+        signale.error('Error while calling /character', response);
+        res.status(response.code)
+        return res.json({
+                code: response.code
+            })
+    };
     return res.json({
-        code: characterDetails.code,
-        characterDetails
+        code: response.code,
+        response
     })
 })
 

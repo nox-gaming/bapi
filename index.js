@@ -11,8 +11,6 @@ const store = []
 /* rq('/wow/character', ['achievements', 'pets']) */
 async function results() {
     const item = await api.getItemDetails(18803)
-    const character = await api.getCharacterDetails(realm, name)
-    console.log('item', item)
-    console.log('character', character)
+    const character = await api.getCharacterDetails('hyjal', 'Carbø')
 }
 results()

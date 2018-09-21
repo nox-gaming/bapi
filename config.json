@@ -1,5 +1,5 @@
 {
-    "base_url": "https://dev.battle.net",
-    "locale": "en_EN",
+    "base_url": "https://eu.api.battle.net",
+    "locale": "fr_FR",
     "token": "doezrfjorejferf"
 }
