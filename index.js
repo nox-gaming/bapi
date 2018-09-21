@@ -1,4 +1,4 @@
-const api = require('./core/routes/index')
+const api = require('./core/api/index')
 const rq = require('./core/request.js')
 
 /**
@@ -11,7 +11,7 @@ const store = []
 /* rq('/wow/character', ['achievements', 'pets']) */
 async function results() {
     const item = await api.getItemDetails(18803)
-    const character = await api.getCharacterDetails('hyjal', 'Carbø')
+    const character = await api.getCharacterDetails(realm, name)
     console.log('item', item)
     console.log('character', character)
 }

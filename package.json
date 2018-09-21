@@ -1,19 +1,24 @@
 {
   "name": "bapi",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.1",
+  "description": "A simple Bnet api",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "./node_modules/.bin/nodemon index.js"
+    "start": "node server.js",
+    "dev": "./node_modules/.bin/nodemon server.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "jaimelacarbonara@gmail.com",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.18.0",
     "blizzard.js": "^2.3.1",
-    "statuses": "^1.5.0"
+    "body-parser": "^1.18.3",
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
+    "signale": "^1.3.0",
+    "statuses": "^1.5.0",
+    "uuid": "^3.3.2"
   },
   "devDependencies": {
     "nodemon": "^1.18.3"

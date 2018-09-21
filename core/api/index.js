@@ -1,4 +1,4 @@
-const getCharacterDetails = require('./getCharacterDetails')
+const getCharacterDetails = require('../middlewares/getCharacterDetails')
 const getItemDetails = require('./getItemDetails')
 
 module.exports = {
