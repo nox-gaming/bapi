@@ -1,7 +1,14 @@
 # BAPI
 
 ## How to launch it
+Create a `.env` file at root folder like :
 
+```json
+PORT=8080
+TOKEN=myAwesomeToken
+```
+
+Then follow the usual node developer path with :
 ```js
 npm install
 npm start
