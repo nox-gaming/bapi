@@ -1,6 +1,4 @@
-# BAPI
-
-<img src="./bapi.jpg" alt="drawing" width="200"/>
+# NOX-API
 
 ## How to launch it
 Create a `.env` file at root folder like :
@@ -29,4 +27,4 @@ Get character informations
 
 Method | uri | parameters | description
 ------ | ------ | ------- | ----
-POST | `/character` |  `string:`realm, `string:`name | Get character informations
+GET | `/plan` |  -- | Get the actual planning

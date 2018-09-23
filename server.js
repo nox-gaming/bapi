@@ -42,11 +42,17 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 
-app.get('/', (req, res) => {
-    res.send('Hello World!')
+app.get('/plan', (req, res) => {
+    res.status(200)
+    res.json({
+        overwatch: {
+            blackwatch: 'nothing',
+            lagriffe: 'nothing'
+        }
+    })
 })
 
-app.post('/character', async (req, res) => {
+app.post('/zd', async (req, res) => {
     const { name, realm } = req.body;
     const response = await getCharacterDetails(realm, name)
     if (response.status !== 200) {
