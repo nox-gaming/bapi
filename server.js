@@ -42,6 +42,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 
+<<<<<<< HEAD
 app.get('/', (req, res) => {    
     res.send('The night is coming')
 })
@@ -76,6 +77,19 @@ app.get('/plan/:plan_id', (req, res) => {
  * Create a plan
  */
 app.post('/plan/:plan_id', async (req, res) => {
+=======
+app.get('/plan', (req, res) => {
+    res.status(200)
+    res.json({
+        overwatch: {
+            blackwatch: 'nothing',
+            lagriffe: 'nothing'
+        }
+    })
+})
+
+app.post('/zd', async (req, res) => {
+>>>>>>> eb237e169bf360f95b9dd4abb51470eab3da7158
     const { name, realm } = req.body;
     const response = await getCharacterDetails(realm, name)
     if (response.status !== 200) {

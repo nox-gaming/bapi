@@ -1,8 +1,8 @@
 {
-    "name": "bapi",
+    "name": "nox-api",
     "public": true,
     "env": {
-        "TOKEN": "@bapi-b-token",
-        "PORT": "@bapi-port"
+        "TOKEN": "@nox-token",
+        "PORT": "@nox-api-port"
       }
 }
