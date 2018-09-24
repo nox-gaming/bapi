@@ -30,3 +30,8 @@ Get character informations
 Method | uri | parameters | description
 ------ | ------ | ------- | ----
 POST | `/character` |  `string:`realm, `string:`name | Get character informations
+
+- [ ] 
+
+# Resources
+- [Node postgres](https://node-postgres.com)
