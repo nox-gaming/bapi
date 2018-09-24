@@ -1,12 +1,12 @@
 {
-  "name": "bapi",
+  "name": "nox-api",
   "version": "0.0.1",
-  "description": "A simple Bnet api",
+  "description": "A simple Nox api",
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
     "dev": "./node_modules/.bin/nodemon server.js",
-    "deploy": "now"
+    "deploy": "now --dotenv=.env"
   },
   "keywords": [],
   "author": "jaimelacarbonara@gmail.com",
