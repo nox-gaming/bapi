@@ -42,25 +42,43 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 
-app.get('/plan', (req, res) => {
-    res.status(200)
-    res.json({
-        overwatch: {
-            blackwatch: 'nothing',
-            lagriffe: 'nothing'
-        }
-    })
+app.get('/', (req, res) => {    
+    res.send('The night is coming')
 })
 
-app.post('/zd', async (req, res) => {
+const basic_plan = {
+    overwatch: {
+        blackwatch: [],
+        lagriffe: []
+    }
+}
+
+/**
+ * Get the plan
+ */
+app.get('/plan/:plan_id', (req, res) => {
+    const { plan_id, body } = req.params;
+    
+    const plan = {
+        number: plan_id,
+        body: req.body
+    }
+    basic_plan.overwatch.blackwatch.push(plan)
+    
+    res.status(200)
+    res.json(basic_plan)
+})
+
+/**
+ * Create a plan
+ */
+app.post('/plan/:plan_id', async (req, res) => {
     const { name, realm } = req.body;
     const response = await getCharacterDetails(realm, name)
     if (response.status !== 200) {
         signale.error('Error while calling /character', response);
         res.status(response.code)
-        return res.json({
-                code: response.code
-            })
+        return res.json({ code: response.code })
     };
     return res.json({
         code: response.code,
