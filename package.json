@@ -1,11 +1,7 @@
 {
   "name": "nox-api",
   "version": "0.0.1",
-<<<<<<< HEAD
-  "description": "A simple nox api",
-=======
   "description": "A simple Nox api",
->>>>>>> eb237e169bf360f95b9dd4abb51470eab3da7158
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
