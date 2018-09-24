@@ -46,6 +46,9 @@ app.get('/', (req, res) => {
     res.send('The night is coming')
 })
 
+/**
+ * Fake db
+ */
 const basic_plan = {
     overwatch: {
         blackwatch: [],
