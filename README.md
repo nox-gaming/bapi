@@ -28,3 +28,6 @@ Get character informations
 Method | uri | parameters | description
 ------ | ------ | ------- | ----
 GET | `/plan` |  -- | Get the actual planning
+
+## Homepage
+Currently testing homepage at https://codepen.io/ugarz/pen/eLwBMg?editors=1101

@@ -41,10 +41,8 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
 
-
-app.get('/', (req, res) => {    
-    res.send('The night is coming')
-})
+// Serve static file
+app.use('/', express.static('public'));
 
 /**
  * Fake db
