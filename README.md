@@ -27,13 +27,4 @@ Get character informations
 
 Method | uri | parameters | description
 ------ | ------ | ------- | ----
-<<<<<<< HEAD
-POST | `/character` |  `string:`realm, `string:`name | Get character informations
-
-- [ ] 
-
-# Resources
-- [Node postgres](https://node-postgres.com)
-=======
 GET | `/plan` |  -- | Get the actual planning
->>>>>>> eb237e169bf360f95b9dd4abb51470eab3da7158
