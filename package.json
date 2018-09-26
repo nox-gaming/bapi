@@ -4,8 +4,10 @@
   "description": "A simple Nox api",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "npm run css-build && node server.js",
     "dev": "./node_modules/.bin/nodemon server.js",
+    "css-build": "node-sass -q -x public/sass/ -o public/css/ -r --output-style compressed",
+    "css-watch": "node-sass -q -x public/sass/ -o public/css/ -r --output-style expanded -w",
     "deploy": "now --dotenv=.env"
   },
   "keywords": [],
@@ -13,7 +15,6 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.18.0",
-    "blizzard.js": "^2.3.1",
     "body-parser": "^1.18.3",
     "dotenv": "^6.0.0",
     "express": "^4.16.3",
@@ -22,6 +23,8 @@
     "uuid": "^3.3.2"
   },
   "devDependencies": {
+    "bulma": "^0.7.1",
+    "node-sass": "^4.9.3",
     "nodemon": "^1.18.3"
   }
 }
