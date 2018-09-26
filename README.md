@@ -9,25 +9,23 @@ TOKEN=myAwesomeToken
 ```
 
 Then follow the usual node developer path with :
-```js
-npm install
-npm start
+```bash
+npm install # install dependencies
+npm start # auto-compile scss in css and launche the server, once.
 ```
 
 ## How to work on it
-Launch the dev mod using `nodemon` to refresh on each save you make.
-```
-npm run dev
+Launch the dev mod using `nodemon` to refresh on each save you make. You will need 2 terms opened to launch the development server and auto-compile scss > css.
+```bash
+npm run dev # Launch the dev server
+npm run css-watch # Launch the auto-compile scss > css
 ```
 
-## API WOW
+## API
 
-### Character
-Get character informations
+### Plan
+Get Plan informations
 
 Method | uri | parameters | description
 ------ | ------ | ------- | ----
 GET | `/plan` |  -- | Get the actual planning
-
-## Homepage
-Currently testing homepage at https://codepen.io/ugarz/pen/eLwBMg?editors=1101
