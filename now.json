@@ -1,8 +1,4 @@
 {
     "name": "nox-api",
-    "public": true,
-    "env": {
-        "TOKEN": "@nox-token",
-        "PORT": "@nox-api-port"
-      }
+    "public": true
 }

@@ -1,10 +1,10 @@
 const config = require('../../config.json')
-const t = process.env.TOKEN || 'km2ftg96z3pnsgtjqsh4pcrngs563uby'
+const token = process.env.TOKEN || ''
 
 /**
  * End_url helper
  */
-const end_url = `?locale=${config.locale}&apikey=${t}`
+const end_url = `?locale=${config.locale}&apikey=${token}`
 
 /**
  * Build routes
