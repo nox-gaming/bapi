@@ -58,12 +58,14 @@ const basic_plan = {
  * Get the plan
  */
 app.get('/plan/:plan_id', (req, res) => {
+    signale.info('|> Getting the plan..')
     const { plan_id, body } = req.params;
     
     const plan = {
         number: plan_id,
         body: req.body
     }
+    signale.info('|> Updating the plan..')
     basic_plan.overwatch.blackwatch.push(plan)
     
     res.status(200)
@@ -75,6 +77,7 @@ app.get('/plan/:plan_id', (req, res) => {
  */
 app.post('/plan/:plan_id', async (req, res) => {
     const { name, realm } = req.body;
+    signale.info('|> Creating a plan..')
     const response = await getCharacterDetails(realm, name)
     if (response.status !== 200) {
         signale.error('Error while calling /character', response);

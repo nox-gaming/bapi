@@ -11,8 +11,6 @@ const suffix = `locale=${config.locale}&apikey=${process.env.TOKEN}`
  * @returns {Object}
  */
 function rq(endpoint, options, fields) {
-    
-    // return 'hello'
    return axios.get(apiRoutes.getCharacterDetails('hyjal', 'Carbø'))
         .then(response => {
             console.log('Response for', response)
