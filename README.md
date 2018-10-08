@@ -29,3 +29,6 @@ Get Plan informations
 Method | uri | parameters | description
 ------ | ------ | ------- | ----
 GET | `/plan` |  -- | Get the actual planning
+
+# Resources
+- [Overlay video css](https://la-cascade.io/effets-video-html5-avec-css-blend-modes/)

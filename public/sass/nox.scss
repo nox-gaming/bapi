@@ -1,13 +1,74 @@
-.video_container {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    overflow: hidden;
+@charset "utf-8";
+@import "../../node_modules/bulma/bulma.sass";
+
+// Import a Google Font
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+
+// Set your brand colors
+$purple: #8A4D76;
+$pink: #FA7C91;
+$brown: #757763;
+$beige-light: #D0D1CD;
+$beige-lighter: #EFF0EB;
+
+// Update Bulma's global variables
+$family-sans-serif: "Nunito", sans-serif;
+$grey-dark: $brown;
+$grey-light: $beige-light;
+$primary: $purple;
+$link: $pink;
+$widescreen-enabled: false;
+$fullhd-enabled: false;
+
+// Update some of Bulma's component variables
+$body-background-color: $beige-lighter;
+$control-border-width: 2px;
+$input-border-color: transparent;
+$input-shadow: none;
+
+// Import only what you need from Bulma
+@import "../node_modules/bulma/sass/utilities/_all.sass";
+@import "../node_modules/bulma/sass/base/_all.sass";
+@import "../node_modules/bulma/sass/elements/button.sass";
+@import "../node_modules/bulma/sass/elements/container.sass";
+@import "../node_modules/bulma/sass/elements/form.sass";
+@import "../node_modules/bulma/sass/elements/title.sass";
+@import "../node_modules/bulma/sass/layout/hero.sass";
+@import "../node_modules/bulma/sass/layout/section.sass";
+
+
+// Mixins
+@keyframes overlay {
+    30% { left: 0; width: 50%; }
+    50% { background: #00f; }
+    80% { left: 80%; width: 20%; }
+    100% { left: 60%; width: 40%; background: #00f; }
 }
-.discord_iframe {
-    position: absolute;
-    right: 0;
-    bottom: -20em;
+
+body{
+    section {
+        height: 30em;
+    }
+    .video_container {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        overflow: hidden;
+    }
+    .discord_iframe {
+        position: absolute;
+        right: 0;
+        bottom: -20em;
+    }
+    figure {
+        background: linear-gradient(90deg, rgba(0,0,0, .8) 100%, transparent 50.1%);
+        video ~ div#vid-cover {
+            animation: overlay 10s forwards;
+          }
+        video {
+            mix-blend-mode: overlay;
+        }
+    }
 }
