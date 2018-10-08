@@ -90,6 +90,24 @@ app.post('/plan/:plan_id', async (req, res) => {
     })
 })
 
+/**
+ * update a plan
+ */
+app.put('/plan/:plan_id', async (req, res) => {
+    const { name, realm } = req.body;
+    signale.info('|> Creating a plan..')
+    const response = await getCharacterDetails(realm, name)
+    if (response.status !== 200) {
+        signale.error('Error while calling /character', response);
+        res.status(response.code)
+        return res.json({ code: response.code })
+    };
+    return res.json({
+        code: response.code,
+        response
+    })
+})
+
 // req.hearders
 // req.body
 // req.url

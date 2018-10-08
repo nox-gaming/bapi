@@ -4,4 +4,10 @@
     right: 0;
     left: 0;
     bottom: 0;
+    overflow: hidden;
+}
+.discord_iframe {
+    position: absolute;
+    right: 0;
+    bottom: -20em;
 }
