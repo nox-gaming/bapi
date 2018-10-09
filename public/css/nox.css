@@ -14407,7 +14407,7 @@ a.has-text-danger:hover, a.has-text-danger:focus {
   }
 }
 
-body div.text-align-right > h1 {
+body div.text-align-right * {
   text-align: right;
 }
 
