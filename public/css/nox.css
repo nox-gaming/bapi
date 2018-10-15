@@ -14427,7 +14427,6 @@ body .video_container {
 body .discord_iframe {
   position: absolute;
   right: 0;
-  bottom: -20em;
 }
 
 body figure {
