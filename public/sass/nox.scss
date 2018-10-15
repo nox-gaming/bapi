@@ -59,18 +59,18 @@ body{
         left: 0;
         bottom: 0;
         overflow: hidden;
+        figure {
+            background: linear-gradient(90deg, rgba(0,0,0, .8) 100%, transparent 50.1%);
+            video ~ div#vid-cover {
+                animation: overlay 10s forwards;
+              }
+            video {
+                mix-blend-mode: overlay;
+            }
+        }
     }
     .discord_iframe {
         position: absolute;
         right: 0;
-    }
-    figure {
-        background: linear-gradient(90deg, rgba(0,0,0, .8) 100%, transparent 50.1%);
-        video ~ div#vid-cover {
-            animation: overlay 10s forwards;
-          }
-        video {
-            mix-blend-mode: overlay;
-        }
     }
 }

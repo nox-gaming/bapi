@@ -14424,19 +14424,15 @@ body .video_container {
   overflow: hidden;
 }
 
-body .discord_iframe {
-  position: absolute;
-  right: 0;
-}
-
-body figure {
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 100%, transparent 50.1%);
-}
-
-body figure video ~ div#vid-cover {
+body .video_container figure video ~ div#vid-cover {
   animation: overlay 10s forwards;
 }
 
-body figure video {
+body .video_container figure video {
   mix-blend-mode: overlay;
+}
+
+body .discord_iframe {
+  position: absolute;
+  right: 0;
 }
