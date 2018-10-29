@@ -10,20 +10,25 @@ const signale = require('signale')
 const uuid = require('uuid')
 const app = express()
 
+// Local dependencies
 const apiRoute = require('./core/routes/index')
+
 
 /**
  * Middlewares
  */
 const requestLogger = require('./core/middlewares/requestLogger')
-const getCharacterDetails = require('./core/middlewares/getCharacterDetails')
-
-const DAL = require('./core/dal/index')
 
 /**
  * Constant
  */
 const port = process.env.PORT || 3000
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({
+    extended: true
+}))
+
+app.use(requestLogger)
 
 app.use('/api', apiRoute)
 
