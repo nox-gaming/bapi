@@ -5,7 +5,10 @@ Create a `.env` file at root folder like :
 
 ```json
 PORT=8080
-TOKEN=myAwesomeToken
+TOKEN=fjnrf
+DB_USER=myAwesomeUser
+DB_PASSWORD=myAwesomePassword
+DB_NAME=myAwesomeDatabaseNme
 ```
 
 Then follow the usual node developer path with :
