@@ -37,6 +37,8 @@ npm run css-watch # Launch the auto-compile scss > css
 ```
 
 ## API
+Note : The api url prepend with `/api`.
+An exemple of api could be like so : http://localhost:3000/api/plan.
 
 ### Plan
 Get Plan informations
