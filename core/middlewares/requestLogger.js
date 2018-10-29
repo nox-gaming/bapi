@@ -1,5 +1,11 @@
+const signale = require('signale')
+
 const requestLogger = (req, res, next) => {
-    signale.info('Request incoming', res)
+    const loggingData = () => ({
+        method: req.method,
+        body: req.body
+    })
+    signale.info('|> Request incoming', loggingData())
     next()
 }
 
