@@ -32,3 +32,7 @@ GET | `/plan` |  -- | Get the actual planning
 
 # Resources
 - [Overlay video css](https://la-cascade.io/effets-video-html5-avec-css-blend-modes/)
+- [Create a postgresql isntance with Docker](https://hub.docker.com/_/postgres/)
+```
+docker run --name test-nox -e POSTGRES_PASSWORD=password -p 5432:5432 -d postgres
+```
