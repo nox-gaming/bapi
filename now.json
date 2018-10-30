@@ -1,4 +1,9 @@
 {
     "name": "nox-gaming",
-    "public": true
+    "public": true,
+    "type": "package.json",
+    "engines": {
+        "node": "^10.12.0",
+        "npm": "^6.4.1"
+    }
 }
