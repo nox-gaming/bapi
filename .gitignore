@@ -1,4 +1,6 @@
+public/
 node_modules/
 .gitignore
 .env
 update-check/
+sql/*.sql

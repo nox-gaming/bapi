@@ -1,4 +1,9 @@
 {
-    "name": "nox-api",
-    "public": true
+    "name": "nox-gaming",
+    "public": true,
+    "type": "npm",
+    "engines": {
+        "node": "^10.12.0",
+        "npm": "^6.4.1"
+    }
 }
