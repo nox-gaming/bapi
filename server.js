@@ -13,7 +13,6 @@ const app = express()
 // Local dependencies
 const apiRoute = require('./core/routes/index')
 
-
 /**
  * Middlewares
  */
@@ -30,6 +29,7 @@ app.use(bodyParser.urlencoded({
 app.use(express.static('public'))
 app.use(requestLogger)
 
+// Prepend all api requests by api
 app.use('/api', apiRoute)
 
 app.listen(port, () => {

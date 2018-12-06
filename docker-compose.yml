@@ -10,9 +10,9 @@ services:
       - ./pgdata:/var/lib/postgresql/data
     ports:
       - '5432:5432'
-  # web:
-  #   image: nox-api
-  #   depends_on:
-  #     - db
-  #   ports:
-  #     - '8082:8082'
+  web:
+    image: nox-api
+    depends_on:
+      - db
+    ports:
+      - '8082:8082'
