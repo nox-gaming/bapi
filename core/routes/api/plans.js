@@ -2,7 +2,8 @@ const express = require('express')
 const signale = require('signale')
 const router = express.Router()
 
-const db = require('../../dal/index')
+const db = require('../../dal/init')
+const DAL = require('../../dal/index')
 
 // Get plans
 router.get('/', function (req, res) {
@@ -26,7 +27,7 @@ router.post('/', function (req, res) {
 router.put('/:id', function (req, res) {
     const { id } = req.params;
     console.log(`Update plan #${id} with`, req.body)
-    return res.json({ status: "success" })
+    return res.json({ status: "success", msg: "Object updated!", data: req.body })
 })
 
 module.exports = router;

@@ -4,8 +4,8 @@
   "description": "A simple Nox api",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "./node_modules/.bin/nodemon server.js",
+    "start": "NODE_ENV=prod node server.js",
+    "dev": "NODE_ENV=dev ./node_modules/.bin/nodemon server.js",
     "css:build": "./node_modules/.bin/node-sass -q -x ./public/sass/ -o ./public/css/ -r --output-style compressed",
     "css:watch": "./node_modules/.bin/node-sass -q -x ./public/sass/ -o ./public/css/ -r --output-style expanded -w",
     "deploy": "now --dotenv=.env"
