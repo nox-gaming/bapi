@@ -6,16 +6,9 @@ const db = require('../../dal/init')
 const DAL = require('../../dal/index')
 
 // Get plans
-router.get('/', function (req, res) {
-    console.log('Get all plans')
-    db.select().from('plans').then(data => {
-        signale.success(data);
-        res.send(data)
-    })
-    .catch(e => {
-        signale.error('Oops', e)
-        return res.json({ error : 'Oops cant connect to db'})
-    })
+router.get('/', async function (req, res) {
+    const plannings = await DAL.plans.list()
+    return res.send(plannings)
 })
 
 // Create a plan
