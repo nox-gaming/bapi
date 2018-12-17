@@ -60,3 +60,4 @@ GET | `/plan` |  -- | Get the actual planning
 ```bash
 docker run --name postgres -e POSTGRES_PASSWORD=password -p 5432:5432 -d postgres
 ```
+- [Foreign key postgresql](http://www.postgresqltutorial.com/postgresql-foreign-key/)

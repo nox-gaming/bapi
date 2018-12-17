@@ -13,9 +13,7 @@ router.get('/', async function (req, res) {
 
 // Create a plan
 router.post('/', async function (req, res) {
-    console.log('Create a plan', req.body)
     const planCreated = await DAL.plans.create(req.body)
-    console.log(planCreated)
     return res.json({ status: "success", id: planCreated})
 })
 

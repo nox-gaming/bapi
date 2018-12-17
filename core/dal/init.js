@@ -10,7 +10,7 @@ const connectToDatabase = {
     }
 }
 
-console.log('connectToDatabase', JSON.stringify(connectToDatabase, null, 4));
+console.log('connectToDatabase', isProd ? 'prod' : 'dev');
 
 
 /* KNEX INITIALISATION */
