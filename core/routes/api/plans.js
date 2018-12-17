@@ -12,10 +12,13 @@ router.get('/', async function (req, res) {
 })
 
 // Create a plan
-router.post('/', function (req, res) {
+router.post('/', async function (req, res) {
     console.log('Create a plan', req.body)
-    return res.json({ status: "success", hash: "d#ez3j"})
+    const planCreated = await DAL.plans.create(req.body)
+    console.log(planCreated)
+    return res.json({ status: "success", id: planCreated})
 })
+
 // Update a plan
 router.put('/:id', function (req, res) {
     const { id } = req.params;

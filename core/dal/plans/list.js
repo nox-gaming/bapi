@@ -16,10 +16,6 @@ async function list(){
     }
 }
 
-async function create(){
-    
-}
-
 // db.select().from('plans').then(data => {
 //     signale.success(data);
 //     res.send(data)
