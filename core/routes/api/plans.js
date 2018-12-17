@@ -20,10 +20,10 @@ router.post('/', async function (req, res) {
 })
 
 // Update a plan
-router.put('/:id', function (req, res) {
+router.get('/:id', async function (req, res) {
     const { id } = req.params;
-    console.log(`Update plan #${id} with`, req.body)
-    return res.json({ status: "success", msg: "Object updated!", data: req.body })
+    const planning = await DAL.plans.fetch({ id })
+    return res.json({ status: "success", planning})
 })
 
 module.exports = router;
