@@ -17,10 +17,17 @@ router.post('/', async function (req, res) {
     return res.json({ status: "success", id: planCreated})
 })
 
-// Update a plan
+// Fetch a plan
 router.get('/:id', async function (req, res) {
     const { id } = req.params;
     const planning = await DAL.plans.fetch({ id })
+    return res.json({ status: "success", planning})
+})
+
+// Delete a plan
+router.delete('/:id', async function (req, res) {
+    const { id } = req.params;
+    const planning = await DAL.plans.remove({ id })
     return res.json({ status: "success", planning})
 })
 
