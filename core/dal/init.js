@@ -13,7 +13,6 @@ const connectToDatabase = {
 console.log('connectToDatabase', isProd ? 'prod' : 'dev');
 
 
-/* KNEX INITIALISATION */
 const knex = require('knex')(connectToDatabase);
 
 module.exports = knex;
