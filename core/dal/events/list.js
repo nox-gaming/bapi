@@ -2,7 +2,7 @@ const db = require('../init')
 const signale = require('signale')
 
 /**
- * list plans
+ * list schedules
  */
 async function list(){
     signale.info('Fetching events')

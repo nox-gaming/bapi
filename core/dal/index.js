@@ -1,9 +1,11 @@
-const knex = require('./init.js')
-const plans = require('./plans')
+const storeRequests = require('./storeRequests')
+const schedules = require('./schedules')
 const events = require('./events')
+const knex = require('./init.js')
 
 module.exports = {
-    knex,
-    plans,
-    events
+    storeRequests,
+    schedules,
+    events,
+    knex
 };

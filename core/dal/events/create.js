@@ -4,14 +4,14 @@ const signale = require('signale')
 /**
  * Create an event
  * @param {data.title} title
- * @param {data.isDone} is_done
+ * @param {data.isFinished} is_finished
  */
 async function create(data){
     signale.info('Creating an event', data)
     const dti = {
         title: data.title,
-        plan_id: data.plan_id,
-        is_done: data.is_done
+        schedule_id: data.scheduleId,
+        is_finished: data.isFinished
     }
     try {
         const eventCreated = await db('events')

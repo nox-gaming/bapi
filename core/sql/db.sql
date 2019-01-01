@@ -35,37 +35,37 @@ CREATE SEQUENCE table_id_seq
 CREATE TABLE requests (
   id bigint NOT NULL DEFAULT next_id(),
   request_id text,
-  token text,
+  ip text,
+  user_agent text,
   method text,
   url text,
-  response_time text,
   request jsonb,
   response jsonb,
   created_at timestamp without time zone DEFAULT CURRENT_TIMESTAMP
 );
 
--- PLANS
-create table "plans" (
+-- SCHEDULE
+create table "schedules" (
   id serial NOT NULL,
   title text,
-  is_done text,
+  is_finished boolean,
   expiration_date text,
   created_at timestamp without time zone DEFAULT CURRENT_TIMESTAMP
 );
 
--- EVENTS BELONGING TO PLANS
+-- EVENTS BELONGING TO SCHEDULE
 create table "events" (
   id serial NOT NULL,
-  plan_id text,
+  schedule_id integer NOT NULL,
   title text,
-  is_done text,
+  is_finished boolean,
   response text,
   expiration_date text,
   created_at timestamp without time zone DEFAULT CURRENT_TIMESTAMP
 );
 
-ALTER TABLE ONLY "plans" ADD CONSTRAINT plans_pk PRIMARY KEY (id);
+ALTER TABLE ONLY "schedules" ADD CONSTRAINT schedule_pk PRIMARY KEY (id);
 ALTER TABLE ONLY "events" ADD CONSTRAINT events_pk PRIMARY KEY (id);
 
 -- INSERT DATA
-insert into "plans" (title, is_done) values ('first plan', false);
+insert into "schedules" (title, is_finished) values ('first schedule', false);

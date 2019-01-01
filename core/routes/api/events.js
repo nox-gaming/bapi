@@ -17,18 +17,18 @@ router.post('/', async function (req, res) {
     return res.json({ status: "success", id: createdEvent})
 })
 
-// Fetch a plan
-// router.get('/:id', async function (req, res) {
-//     const { id } = req.params;
-//     const planning = await DAL.events.fetch({ id })
-//     return res.json({ status: "success", planning})
-// })
+// Fetch an event
+router.get('/:id', async function (req, res) {
+    const { id } = req.params;
+    const event = await DAL.events.fetch({ id })
+    return res.json({ status: "success", event})
+})
 
-// Delete a plan
-// router.delete('/:id', async function (req, res) {
-//     const { id } = req.params;
-//     const planning = await DAL.events.remove({ id })
-//     return res.json({ status: "success", planning})
-// })
+// Delete a schedule
+router.delete('/:id', async function (req, res) {
+    const { id } = req.params;
+    const event = await DAL.events.remove({ id })
+    return res.json({ status: "success", event})
+})
 
 module.exports = router;

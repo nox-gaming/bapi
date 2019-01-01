@@ -16,7 +16,7 @@ const apiRoute = require('./core/routes/index')
 /**
  * Middlewares
  */
-const requestLogger = require('./core/middlewares/requestLogger')
+const requestGateway = require('./core/middlewares/requestGateway')
 
 /**
  * Constant
@@ -27,7 +27,7 @@ app.use(bodyParser.urlencoded({
     extended: true
 }))
 app.use(express.static('public'))
-app.use(requestLogger)
+app.use(requestGateway)
 
 // Prepend all api requests by api
 app.use('/api', apiRoute)

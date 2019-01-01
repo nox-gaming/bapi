@@ -1,6 +1,6 @@
-const requestLogger = (req, res, next) => {
+const requestGateway = (req, res, next) => {
     signale.info('Request incoming', res)
     next()
 }
 
-module.exports = requestLogger;
+module.exports = requestGateway;

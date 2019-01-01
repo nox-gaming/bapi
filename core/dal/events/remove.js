@@ -1,15 +1,17 @@
 const db = require('../init')
 const signale = require('signale')
 
+function findPlan(scheduleId){}
+
 /**
- * remove a plan
+ * remove a schedule
  * @param {data.id} id
  */
 async function remove(data){
-    signale.info('Removing a planning')
+    signale.info('Removing an event')
     const dti = { id: data.id }
     try {
-        const removedPlan = await db('plans')
+        const removedPlan = await db('events')
             .returning('id')
             .where(dti)
             .del()

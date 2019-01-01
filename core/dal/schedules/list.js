@@ -2,12 +2,12 @@ const db = require('../init')
 const signale = require('signale')
 
 /**
- * list plans
+ * list schedules
  */
 async function list(){
     signale.info('Fetching plannings')
     try {
-        const plannings = await db.select().from('plans')
+        const plannings = await db.select().from('schedules')
         signale.success(plannings);
         return plannings;
     } catch (error) {   

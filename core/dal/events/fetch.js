@@ -2,14 +2,14 @@ const db = require('../init')
 const signale = require('signale')
 
 /**
- * fetch plans
+ * fetch schedules
  */
 async function fetch(data){
-    signale.info(`Fetching planning with id ${data.id}`)
+    signale.info(`Fetching event with id ${data.id}`)
     try {
         const plannings = await db
             .where({ id: data.id }).select()
-            .from('requests')
+            .from('events')
         
             signale.success(plannings);
         return plannings;

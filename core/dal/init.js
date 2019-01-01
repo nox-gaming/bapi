@@ -1,5 +1,6 @@
 const env = process.env.NODE_ENV;
 const isProd = env === 'prod' ? true : false;
+
 const connectToDatabase = {
     client: 'pg',
     connection: {

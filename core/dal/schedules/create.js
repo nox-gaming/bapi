@@ -2,18 +2,17 @@ const db = require('../init')
 const signale = require('signale')
 
 /**
- * Create a plan
+ * Create a schedule
  * @param {data.title} title
- * @param {data.isDone} is_done
+ * @param {data.isFinished} is_done
  */
 async function create(data){
     signale.info('Creating a planning')
     const dti = {
-        title: data.title,
-        is_done: data.isDone
+        title: data.title
     }
     try {
-        const planCreated = await db('plans')
+        const planCreated = await db('schedules')
             .returning('id')
             .insert(dti)
         return planCreated;

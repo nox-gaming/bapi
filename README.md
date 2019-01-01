@@ -45,14 +45,14 @@ docker-compose down # Stops a containers network
 
 ## API
 Note : The api url prepend with `/api`.
-An exemple of api could be like so : http://localhost:3000/api/plan.
+An exemple of api could be like so : http://localhost:3000/api/schedule.
 
 ### Plan
 Get Plan informations
 
 Method | uri | parameters | description
 ------ | ------ | ------- | ----
-GET | `/plan` |  -- | Get the actual planning
+GET | `/schedule` |  -- | Get the actual planning
 
 # Resources
 - [Overlay video css](https://la-cascade.io/effets-video-html5-avec-css-blend-modes/)

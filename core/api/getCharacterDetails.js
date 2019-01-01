@@ -18,7 +18,7 @@ const getCharacterDetails = (realm, name) =>
         statusText: characterDetails.statusText,
         data: characterDetails.data
       }
-      signale.success('Found character data', p)
+      signale.success('Found character data')
       return p
     })
     .catch(error => {

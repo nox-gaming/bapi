@@ -13,12 +13,12 @@ CREATE TABLE "public"."requests" (
     PRIMARY KEY ("id")
 );
 
--- Create a plans table
-create table "plans" (
+-- Create a schedules table
+create table "schedules" (
 	id serial,
 	title varchar(150),
 	is_done boolean
 );
 
 -- insert values
-insert into "plans" (title, is_done) values ('first plan', false);
+insert into "schedules" (title, is_done) values ('first schedule', false);
