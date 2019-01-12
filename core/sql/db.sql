@@ -58,7 +58,7 @@ create table "games" (
 
 -- SCHEDULE
 create table "schedules" (
-  id serial NOT NULL PRIMARY KEY,
+  id bigint NOT NULL DEFAULT next_id() PRIMARY KEY,
   title text,
   is_finished boolean,
   organizers text,
@@ -69,7 +69,7 @@ create table "schedules" (
 
 -- EVENTS BELONGING TO SCHEDULE
 create table "events" (
-  id serial NOT NULL,
+  id bigint NOT NULL DEFAULT next_id(),
   schedule_id integer REFERENCES schedules(id),
   title text,
   is_finished boolean,
@@ -81,30 +81,44 @@ create table "events" (
 
 -- TEAMS
 create table "teams" (
-  id serial NOT NULL PRIMARY KEY,
+  id bigint NOT NULL DEFAULT next_id(),
   hash text,
   title text,
   tag text,
   game_id integer REFERENCES games(id) NOT NULL,
   is_dissolved boolean,
   squads text,
-  created_at timestamp without time zone DEFAULT CURRENT_TIMESTAMP
+  created_at timestamp without time zone DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (id, game_id),
+  UNIQUE(hash)
 );
 
 -- MEMBERS
 create table "members" (
-  id serial NOT NULL PRIMARY KEY,
+  id bigint NOT NULL DEFAULT next_id() PRIMARY KEY,
+  password text,
   firstname text,
   lastname text,
   nickname text,
+  tag text,
   squads text,
   teams text,
   created_at timestamp without time zone DEFAULT CURRENT_TIMESTAMP
 );
 
+
+select * from members
+where created_at > now();
+
+--- overwatch_players
+create view ovewatch_players as
+select * from members where firstname = 'Ugo';
+
 -- INSERT DATA
-insert into "members" (firstname, lastname, nickname, squads, teams) values ('Ugo', 'Arzur', 'Carbo', '["Blackwatch"]', '["Blackwatch"]');
-insert into "games" (hash, title, type) values ('abcd', 'Overwatch', '["fps"]');
+insert into "games" (hash, title, type) values ('abcd', 'Overwatch', '["FPS"]');
+insert into "members" (password, firstname, lastname, nickname, tag, squads, teams) values ('azerty', 'Camille', 'Guerin', 'Pölaire', 'azerty', '["Blackwatch"]', '["Blackwatch"]');
+insert into "members" (firstname, lastname, nickname, tag, squads, teams) values ('Ugo', 'Arzur', 'Carbo', 'abcd', '["Blackwatch"]', '["Blackwatch"]');
+insert into "members" (firstname, lastname, nickname, tag, squads, teams) values ('Ugo', 'Arzur', 'Carbo', 'abcde', '["Blackwatch"]', '["Blackwatch"]');
 insert into "teams" (hash, title, is_dissolved, tag, squads, game_id) values ('xb03hi','Overwatch team', false, 'lgrf', '["Overwatch"]', 1);
-insert into "schedules" (title, is_finished, team) values ('Overwatch Schedule', false, 'xb03hi');
-insert into "events" (schedule_id, title, is_finished, description, expiration_date) values (1, 'Overwatch Schedule', false, 'hallo','xb03hi');
+insert into "schedules" (id, title, is_finished, team) values (1, 'Overwatch Schedule', false, 'xb03hi');
+insert into "events" (schedule_id, title, is_finished, description, expiration_date) values (1, 'Overwatch Schedule', false, 'Overwatch League Open Division - preparation','xb03hi');
