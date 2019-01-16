@@ -59,3 +59,4 @@ GET | `/schedule` |  -- | Get the actual planning
 - [Create a postgresql isntance with Docker](https://hub.docker.com/_/postgres/)
 - [Foreign key postgresql](http://www.postgresqltutorial.com/postgresql-foreign-key/)
 - [KNEX Query Builder](https://knexjs.org/#Builder-where)
+- [Handle JSON data with Postgresql](http://www.postgresqltutorial.com/postgresql-json/)
